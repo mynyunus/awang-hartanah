@@ -284,6 +284,34 @@ h1 {
   font-size: clamp(1.9rem, 4.5vw, 3rem);
 }
 
+.hero-emphasis {
+  display: inline-block;
+  color: var(--primary);
+  border: 0;
+  border-radius: 0;
+  padding: 0.08em 0.34em;
+  margin-right: 0.12em;
+  line-height: 1.08;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(255, 0, 0, 0.12);
+  animation: heroPunchIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroPunchIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.88);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(0) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 h2 {
   font-size: clamp(1.45rem, 3.4vw, 2.2rem);
 }
@@ -1115,6 +1143,10 @@ h3 {
 
   .row-right .testimonial-track,
   .row-left .testimonial-track {
+    animation: none;
+  }
+
+  .hero-emphasis {
     animation: none;
   }
 }
