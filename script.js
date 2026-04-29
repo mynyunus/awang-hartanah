@@ -1,0 +1,13 @@
+(()=>{const c=(s,p=document)=>p.querySelector(s),ca=(s,p=document)=>[...p.querySelectorAll(s)],faq=ca('.faq-item'),popup=c('#scroll-popup'),closeBtn=c('#popup-close'),seen='khai-popup-closed',header=c('.site-header'),hamburger=c('#hamburger-btn');
+const closeMenu=()=>{if(!header||!hamburger)return;header.classList.remove('menu-open');hamburger.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');};
+const openMenu=()=>{if(!header||!hamburger)return;header.classList.add('menu-open');hamburger.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');};
+hamburger?.addEventListener('click',()=>header?.classList.contains('menu-open')?closeMenu():openMenu());
+document.addEventListener('click',e=>{if(window.innerWidth>=768||!header?.classList.contains('menu-open'))return;if(!header.contains(e.target))closeMenu();});
+window.addEventListener('resize',()=>{if(window.innerWidth>=768)closeMenu();});
+faq.forEach(item=>{const q=c('.faq-q',item),a=c('.faq-a',item);q.addEventListener('click',()=>{const open=item.classList.contains('is-open');faq.forEach(it=>{it.classList.remove('is-open');c('.faq-q',it).setAttribute('aria-expanded','false');c('.faq-a',it).style.maxHeight='0px';});if(!open){item.classList.add('is-open');q.setAttribute('aria-expanded','true');a.style.maxHeight=`${a.scrollHeight}px`;}});});
+const onScroll=()=>{if(!popup||sessionStorage.getItem(seen)==='1')return;const range=document.documentElement.scrollHeight-window.innerHeight;if(range<=0)return;const threshold=window.innerWidth<768?45:35;const sc=(window.scrollY/range)*100;if(sc>threshold){popup.classList.add('show');window.removeEventListener('scroll',onScroll);}};
+if(popup)window.addEventListener('scroll',onScroll,{passive:true});
+closeBtn?.addEventListener('click',()=>{popup.classList.remove('show');sessionStorage.setItem(seen,'1');});
+ca('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(!id||id==='#')return;const el=c(id);if(!el)return;e.preventDefault();closeMenu();el.scrollIntoView({behavior:'smooth',block:'start'});}));
+const io='IntersectionObserver'in window&&window.innerWidth>=768?new IntersectionObserver(es=>es.forEach(en=>en.isIntersecting&&en.target.classList.add('is-visible')),{threshold:.12}):null;ca('.reveal').forEach(el=>io?io.observe(el):el.classList.add('is-visible'));
+})();
