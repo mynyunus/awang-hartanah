@@ -561,16 +561,48 @@ h3 {
 
 .about-owner {
   margin: 1rem auto 1.2rem;
-  width: min(100%, 340px);
+  width: min(100%, 460px);
 }
 
 .about-owner img {
   width: 100%;
-  height: clamp(220px, 38vw, 300px);
-  object-fit: cover;
-  object-position: center 88%;
+  height: auto;
+  object-fit: contain;
   border-radius: 16px;
   box-shadow: var(--shadow);
+}
+
+.about-team-title {
+  margin: 1.1rem 0 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.team-grid {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  text-align: center;
+}
+
+.team-card h4 {
+  margin: 0 0 0.45rem;
+  font-family: Poppins, sans-serif;
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.team-card p {
+  margin: 0;
+  max-width: none;
 }
 
 .process-list {
@@ -930,14 +962,26 @@ h3 {
   }
 
   .about-owner {
-    width: min(100%, 280px);
+    width: min(100%, 330px);
     margin-top: 0.8rem;
     margin-bottom: 1rem;
   }
 
   .about-owner img {
-    height: 220px;
-    object-position: center 92%;
+    height: auto;
+  }
+
+  .team-card {
+    padding: 0.85rem;
+  }
+
+  .team-card h4 {
+    font-size: 0.92rem;
+  }
+
+  .team-card p {
+    font-size: 0.84rem;
+    line-height: 1.4;
   }
 
   .process-list {
@@ -1046,6 +1090,10 @@ h3 {
   }
 
   .metric-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .team-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
