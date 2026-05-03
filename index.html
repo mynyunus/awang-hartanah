@@ -34,6 +34,7 @@
       </a>
       <nav class="main-nav" aria-label="Navigasi utama">
         <a class="desktop-nav-link" href="#services">Servis</a>
+        <a class="desktop-nav-link" href="#listing">Listing</a>
         <a class="desktop-nav-link" href="#process">Proses</a>
         <a class="desktop-nav-link" href="#faq">FAQ</a>
         <a class="desktop-nav-link" href="#testimoni">Testimoni</a>
@@ -48,6 +49,7 @@
     <div class="mobile-drawer" id="mobile-drawer">
       <nav class="mobile-nav" aria-label="Navigasi mobile">
         <a href="#services">Servis</a>
+        <a href="#listing">Listing</a>
         <a href="#process">Proses</a>
         <a href="#faq">FAQ</a>
         <a href="#testimoni">Testimoni</a>
@@ -152,6 +154,20 @@
         </div>
         <p class="coverage">Kawasan liputan aktif: <strong>Miri, Bintulu, Sibu, Kuching</strong>.</p>
         <a class="btn btn-cta" href="https://wa.me/60143597478" target="_blank" rel="noopener noreferrer">Dapatkan Cadangan Hartanah</a>
+      </div>
+    </section>
+
+    <section id="listing" class="section listing-section reveal">
+      <div class="container">
+        <h2>Listing Rumah Terkini</h2>
+        <p>Kemaskini listing dibuat secara live dari data semasa. Pilih rumah yang sesuai, lihat gambar, dan terus hubungi kami melalui WhatsApp.</p>
+        <p class="listing-loading" id="listing-loading">Memuatkan listing...</p>
+        <div class="listing-grid" id="listing-grid" role="list" aria-live="polite"></div>
+        <article class="listing-fallback card" id="listing-fallback" hidden>
+          <h3>Masih Cari Rumah Sesuai?</h3>
+          <p>Kami bantu anda shortlist rumah ikut bajet, kawasan, dan keperluan keluarga anda.</p>
+          <a class="btn btn-cta" href="https://wa.me/60143597478?text=Hi%20Team%20Khai%20Ina%20Ella%2C%20saya%20nak%20bantuan%20cari%20rumah%20yang%20sesuai." target="_blank" rel="noopener noreferrer">Tanya Listing Terkini</a>
+        </article>
       </div>
     </section>
 
@@ -370,6 +386,15 @@
     <p>WhatsApp kami sekarang untuk semakan awal yang cepat dan jelas.</p>
     <a class="btn btn-cta" href="https://wa.me/60143597478" target="_blank" rel="noopener noreferrer">WhatsApp Sekarang</a>
   </aside>
+
+  <div class="listing-lightbox" id="listing-lightbox" hidden aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Tutup paparan gambar">&times;</button>
+    <button class="lightbox-nav prev" id="lightbox-prev" type="button" aria-label="Gambar sebelumnya">&#10094;</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="Gambar listing rumah">
+    </figure>
+    <button class="lightbox-nav next" id="lightbox-next" type="button" aria-label="Gambar seterusnya">&#10095;</button>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
