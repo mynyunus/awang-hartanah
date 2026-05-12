@@ -2,7 +2,7 @@
   const q = (s, p = document) => p.querySelector(s);
   const qa = (s, p = document) => [...p.querySelectorAll(s)];
 
-  const WA_BASE = "https://wa.me/60143597478";
+  const WA_BASE = "https://wa.me/601155820907";
   const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1TPV9qC2rwZbZCxZVWZjXmBsPI7BoR1VHBvmK3E1SBDQ/export?format=csv&gid=0";
 
   const ui = {
